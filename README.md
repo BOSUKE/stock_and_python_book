@@ -6,9 +6,9 @@
 
 | 章・節番号  | サンプルコード内容 | GitHubでのファイルパス | 備考 |
 |------------|-------------------|----------------------|---------|
-| 2.3.2 | 2. PyQueryの使い方 | [chapter2/pyquery_sample.py](chapter2/pyquery_sample.py) | [株探のHTMLファイル変更に対応](株探のHTMLファイル変更)  |
+| 2.3.2 | 2. PyQueryの使い方 | [chapter2/pyquery_sample.py](chapter2/pyquery_sample.py) | [株探のHTMLファイル変更に対応](#株探のHTMLファイル変更)  |
 | 2.3.3.| 2. seleniumの使い方 | [chapter2/selenium_sample.py](chapter2/selenium_sample.py) | |
-| 2.3.4 | リスト2.1 | [chapter2/get_brands.py](chapter2/get_brands.py )|[株探のHTMLファイル変更に対応](株探のHTMLファイル変更)  |
+| 2.3.4 | リスト2.1 | [chapter2/get_brands.py](chapter2/get_brands.py )|[株探のHTMLファイル変更に対応](#株探のHTMLファイル変更)  |
 | 2.4.1 | リスト2.2 | [chapter2/yahoo_csv_download.py](chapter2/yahoo_csv_download.py) | |
 | 2.4.1 | リスト2.3 | [chapter2/csv_to_db.py](chapter2/csv_to_db.py) ||
 | 2.5.2 | リスト2.4 | [chapter2/get_new_brands.py](chapter2/get_new_brands.py)| |
@@ -20,13 +20,13 @@
 | 3.3 | リスト3.6 | [chapter3/buy_and_hold.py](chapter3/buy_and_hold.py) ||
 | 3.4 | リスト3.7 | [chapter3/rating_trade.py](chapter3/rating_trade.py) ||
 | 3.4 | リスト3.8 | [chapter3/nikkei_tsumitate_trade.py](chapter3/nikkei_tsumitate_trade.py)||
-| 4章 | リスト4.1 ～ リスト4.2 | [chapter4_5/simulator.py] | 3章のsimulater.pyに指標関数を追加 |
+| 4章 | リスト4.1 ～ リスト4.2 | [chapter4_5/simulator.py](chapter4_5/simulator.py) | 3章のsimulater.pyに指標関数を追加 |
 | 5.4 | リスト5.1 | [chapter4_5/opincome_trade.py](chapter4_5/opincome_trade.py) | |
 
 ## 訂正と補足
 
 ### 株探のHTMLファイル変更
-株探(Kabutan.jp)のページ内容（HTMLデータ内容)が本書執筆時から変更されたため、本書内の一部のコードがそのままでは動作しません。動作しないコードの一覧は [サンプルコード一覧](サンプルコード一覧)を参照してください。
+株探(Kabutan.jp)のページ内容（HTMLデータ内容)が本書執筆時から変更されたため、本書内の一部のコードがそのままでは動作しません。動作しないコードの一覧は [サンプルコード一覧](#サンプルコード一覧)を参照してください。
 GitHub上のコードは本README.mdコミット時点で動作することを確認していますので、そちらを参考にしてください。
 
 ### JupyterLabの利用を推奨
