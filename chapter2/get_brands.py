@@ -20,7 +20,7 @@ def get_brand(code):
     unit_str = q.find('#kobetsu_left > table:nth-child(4) > tbody > tr:nth-child(6) > td').text()
     unit = int(unit_str.split()[0].replace(',', ''))
     sector = q.find('#stockinfo_i2 > div > a').text()
-  except ValueError:
+  except (ValueError, IndexError):
     return None
 
   return code, name, short_name, market, unit, sector
