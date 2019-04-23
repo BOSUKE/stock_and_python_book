@@ -7,7 +7,7 @@ import sqlite3
 
 
 def generate_price_from_csv_file(csv_file_name, code):
-    with open(csv_file_name) as f:
+    with open(csv_file_name, encoding="shift_jis") as f:
         reader = csv.reader(f)
         next(reader)  # 先頭行を飛ばす
         for row in reader:
