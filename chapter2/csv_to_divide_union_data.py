@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 import csv
-import glob
 import datetime
+import glob
 import os
 import sqlite3
+
+from tqdm import tqdm
 
 
 def generater_devide_union_from_csv_file(csv_file_name, code):
@@ -34,7 +36,7 @@ def generater_devide_union_from_csv_file(csv_file_name, code):
 
 
 def generate_from_csv_dir(csv_dir, generate_func):
-    for path in glob.glob(os.path.join(csv_dir, "*.T.csv")):
+    for path in tqdm(glob.glob(os.path.join(csv_dir, "*.T.csv")), desc="csvから株式分割データをDBにinsert..."):
         file_name = os.path.basename(path)
         code = file_name.split('.')[0]
         for d in generate_func(path, code):
