@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
+from tqdm import tqdm
+
 
 def download_stock_csv(code_range, save_dir):
 
@@ -20,7 +22,7 @@ def download_stock_csv(code_range, save_dir):
     # ここで手動でログインを行う。ログインしたら enter
     input('After login, press enter: ')
 
-    for code in code_range:
+    for code in tqdm(code_range, desc="yahooファイナンスからcsvをダウンロード..."):
         url = 'https://stocks.finance.yahoo.co.jp/stocks/history/?code={0}.T'.format(code)
         driver.get(url)
 
