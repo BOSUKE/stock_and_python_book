@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
-from pyquery import PyQuery
-import time
 import sqlite3
+import time
+
+from pyquery import PyQuery
+from tqdm import tqdm
 
 
 def get_brand(code):
@@ -26,7 +28,7 @@ def get_brand(code):
   return code, name, short_name, market, unit, sector
 
 def brands_generator(code_range):
-  for code in code_range:
+  for code in tqdm(code_range, desc="銘柄をHTMLからパース..."):
     brand = get_brand(code)
     if brand:
       yield brand
