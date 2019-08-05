@@ -2,6 +2,9 @@
 import datetime
 import sqlite3
 
+from tqdm import tqdm
+
+
 def apply_divide_union_data(db_file_name, date_of_right_allotment):
     conn = sqlite3.connect(db_file_name)
 
@@ -27,14 +30,14 @@ def apply_divide_union_data(db_file_name, date_of_right_allotment):
     """
     cur = conn.execute(sql, (date_of_right_allotment,))
     divide_union_data = cur.fetchall()
-    
+
     with conn:
         conn.execute('BEGIN TRANSACTION')
-        for code, date_of_right_allotment, before, after in divide_union_data:
-            
+        for code, date_of_right_allotment, before, after in tqdm(divide_union_data, desc="分割調整後のpriceをupdate..."):
+
             rate = before / after
             inv_rate = 1 / rate
-            
+
             conn.execute(
               'UPDATE prices SET '
               ' open = open * :rate, '
@@ -48,7 +51,7 @@ def apply_divide_union_data(db_file_name, date_of_right_allotment):
                'date_of_right_allotment' : date_of_right_allotment,
                'rate' : rate,
                'inv_rate' : inv_rate})
-                          
+
             conn.execute(
               'INSERT INTO '
               'applied_divide_union_data(code, date_of_right_allotment) '
