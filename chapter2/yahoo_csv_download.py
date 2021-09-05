@@ -25,7 +25,7 @@ def download_stock_csv(code_range, save_dir):
         driver.get(url)
 
         try:
-            driver.find_element_by_css_selector('a.stocksCsvBtn').click()
+            driver.find_element_by_link_text('時系列データをダウンロード（CSV）').click()
         except NoSuchElementException:
             pass
 
